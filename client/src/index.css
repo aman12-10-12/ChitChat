@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --cc-bg: #FFF2DB;
+  --cc-surface: #FFFAF3;
+  --cc-surface-deep: #FFE5BF;
+  --cc-accent: #F62440;
+  --cc-accent-dark: #b3132a;
+  --cc-text: #4a3826;
+  --cc-text-soft: #9c8a6f;
+  --cc-shadow-dark: rgba(198, 148, 88, 0.35);
+  --cc-shadow-light: rgba(255, 255, 255, 0.9);
+}
+
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--cc-bg);
+}
+
+/* ---------- Neomorphism system ---------- */
+
+.neo-raised {
+  background: var(--cc-surface);
+  box-shadow: 8px 8px 16px var(--cc-shadow-dark), -8px -8px 16px var(--cc-shadow-light);
+}
+
+.neo-raised-sm {
+  background: var(--cc-surface);
+  box-shadow: 4px 4px 8px var(--cc-shadow-dark), -4px -4px 8px var(--cc-shadow-light);
+}
+
+.neo-inset {
+  background: var(--cc-bg);
+  box-shadow: inset 4px 4px 8px var(--cc-shadow-dark), inset -4px -4px 8px var(--cc-shadow-light);
+}
+
+.neo-inset-deep {
+  background: var(--cc-surface-deep);
+  box-shadow: inset 3px 3px 6px var(--cc-shadow-dark), inset -3px -3px 6px var(--cc-shadow-light);
+}
+
+.neo-btn {
+  background: var(--cc-surface);
+  box-shadow: 5px 5px 10px var(--cc-shadow-dark), -5px -5px 10px var(--cc-shadow-light);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.neo-btn:active {
+  box-shadow: inset 3px 3px 6px var(--cc-shadow-dark), inset -3px -3px 6px var(--cc-shadow-light);
+  transform: scale(0.98);
+}
+
+.neo-btn-accent {
+  background: var(--cc-accent);
+  box-shadow: 5px 5px 14px rgba(246, 36, 64, 0.35), -5px -5px 10px var(--cc-shadow-light);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.neo-btn-accent:active {
+  box-shadow: inset 3px 3px 8px rgba(120, 15, 30, 0.45);
+  transform: scale(0.98);
+}
+.neo-btn-accent:disabled {
+  background: var(--cc-surface-deep);
+  box-shadow: 3px 3px 6px var(--cc-shadow-dark), -3px -3px 6px var(--cc-shadow-light);
+  color: var(--cc-text-soft);
+}
+
+.neo-chip {
+  background: var(--cc-surface);
+  box-shadow: 3px 3px 6px var(--cc-shadow-dark), -3px -3px 6px var(--cc-shadow-light);
+}
+
+.neo-text { color: var(--cc-text); }
+.neo-text-soft { color: var(--cc-text-soft); }
+.neo-accent-text { color: var(--cc-accent); }
