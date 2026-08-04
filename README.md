@@ -2,9 +2,11 @@
 A real time chat application built with the MERN stack (MongoDB, Express, React, Node.js) and Socket.io.
 
 ## Status
-- In active development.
+- [x] In active development.
 - [x] Backend authentication complete.
-- [x] Frontend authentication complete (login, signup, profile).
+- [x] Frontend authentication complete.
+- [x] Backend real-time messaging complete.
+
 
 ## Tech Stack
 - **Frontend:** React (Vite), Tailwind CSS, Framer Motion
@@ -45,8 +47,20 @@ A real time chat application built with the MERN stack (MongoDB, Express, React,
 | GET | `/api/auth/check` | Check current session | Yes |
 | PUT | `/api/auth/update-profile` | Update name, bio, profile picture | Yes |
 
+## API — Message Routes
+| Method | Route | Description | Auth required |
+|---|---|---|---|
+| GET | `/api/messages/users` | Get all users + unseen message counts | Yes |
+| GET | `/api/messages/:id` | Get messages with a specific user | Yes |
+| POST | `/api/messages/send/:id` | Send a text or image message | Yes |
+| DELETE | `/api/messages/:id` | Delete a message | Yes |
+
+
+## Real time
+Socket.io tracks connected users in an in-memory `userSocketMap` and broadcasts `getOnlineUsers` on connect/disconnect, so clients see live online status without polling.
+
 ## Roadmap
 - [x] Backend — user auth
 - [x] Frontend — user auth
-- [ ] Backend — real-time messaging
-- [ ] Frontend — real time messaging
+- [x] Backend — real time messaging
+- [ ] Frontend — real- ime messaging
